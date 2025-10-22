@@ -1,0 +1,76 @@
+{
+  "name": "strapi-plugin-component-usage",
+  "version": "1.0.0",
+  "description": "Track and manage Strapi component usage across content types with dependency visualization",
+  "keywords": [
+    "strapi",
+    "strapi-plugin",
+    "component",
+    "component-usage",
+    "dependency-tracking",
+    "content-management",
+    "admin-ui"
+  ],
+  "license": "MIT",
+  "author": {
+    "name": "Opkod",
+    "email": "contact@opkod.io",
+    "url": "https://opkod.io"
+  },
+  "maintainers": [
+    {
+      "name": "Ayoub Hidri",
+      "email": "ayoub@opkod.io",
+      "url": "https://github.com/ayhid"
+    }
+  ],
+  "contributors": [
+    {
+      "name": "Opkod France",
+      "url": "https://github.com/opkod-france"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/opkod-france/strapi-plugin-component-usage.git"
+  },
+  "bugs": {
+    "url": "https://github.com/opkod-france/strapi-plugin-component-usage/issues"
+  },
+  "homepage": "https://github.com/opkod-france/strapi-plugin-component-usage#readme",
+  "engines": {
+    "node": ">=14.19.1 <=20.x.x",
+    "npm": ">=6.0.0"
+  },
+  "strapi": {
+    "displayName": "Component Usage",
+    "name": "component-usage",
+    "description": "Track component usage and dependencies across your Strapi content types",
+    "kind": "plugin",
+    "required": false
+  },
+  "files": [
+    "admin",
+    "server",
+    "strapi-admin.js",
+    "strapi-server.js",
+    "README.md",
+    "LICENSE",
+    "package.json"
+  ],
+  "scripts": {
+    "test": "echo \"No tests specified\" && exit 0"
+  },
+  "dependencies": {},
+  "peerDependencies": {
+    "@strapi/design-system": "^1.9.0",
+    "@strapi/helper-plugin": "^4.13.1",
+    "@strapi/icons": "^1.9.0",
+    "@strapi/strapi": "^4.13.1",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-intl": "^6.4.1",
+    "react-router-dom": "^5.3.4"
+  },
+  "devDependencies": {}
+}

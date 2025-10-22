@@ -1,0 +1,51 @@
+# Development files
+*.log
+*.swp
+.DS_Store
+.idea
+.vscode
+.cache
+.env
+.env.*
+
+# Test files
+test/
+tests/
+*.test.js
+*.spec.js
+coverage/
+
+# Documentation files (keep README.md)
+docs/
+*.md
+!README.md
+!CONTRIBUTING.md
+
+# Build artifacts
+dist/
+build/
+.build/
+
+# Git files
+.git
+.gitignore
+.gitattributes
+
+# CI/CD
+.github/
+.gitlab-ci.yml
+.travis.yml
+
+# Package manager files
+node_modules/
+yarn.lock
+pnpm-lock.yaml
+package-lock.json
+
+# IDE
+*.sublime-project
+*.sublime-workspace
+
+# Temporary files
+tmp/
+temp/
