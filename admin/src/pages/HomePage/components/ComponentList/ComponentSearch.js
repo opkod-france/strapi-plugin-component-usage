@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useIntl } from 'react-intl';
 import { Box, Searchbar } from '@strapi/design-system';
-import getTrad from '../../../../utils/getTrad';
+import getTranslation from '../../../../utils/getTranslation';
 
 export const ComponentSearch = ({ searchQuery, onSearchChange }) => {
   const { formatMessage } = useIntl();
@@ -14,10 +14,10 @@ export const ComponentSearch = ({ searchQuery, onSearchChange }) => {
         onClear={() => onSearchChange('')}
         value={searchQuery}
         onChange={(e) => onSearchChange(e.target.value)}
-        clearLabel={formatMessage({ id: getTrad('ComponentSearch.clearLabel'), defaultMessage: 'Clear' })}
-        placeholder={formatMessage({ id: getTrad('ComponentSearch.placeholder'), defaultMessage: 'Search components...' })}
+        clearLabel={formatMessage({ id: getTranslation('ComponentSearch.clearLabel'), defaultMessage: 'Clear' })}
+        placeholder={formatMessage({ id: getTranslation('ComponentSearch.placeholder'), defaultMessage: 'Search components...' })}
       >
-        {formatMessage({ id: getTrad('ComponentSearch.label'), defaultMessage: 'Search components' })}
+        {formatMessage({ id: getTranslation('ComponentSearch.label'), defaultMessage: 'Search components' })}
       </Searchbar>
     </Box>
   );

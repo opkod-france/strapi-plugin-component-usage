@@ -5,7 +5,7 @@ import { Box, Typography, Button, Flex, EmptyStateLayout } from '@strapi/design-
 import { Trash, Puzzle } from '@strapi/icons';
 import { request, useNotification } from '@strapi/helper-plugin';
 import { pluginId } from '../../../../utils/constants';
-import getTrad from '../../../../utils/getTrad';
+import getTranslation from '../../../../utils/getTranslation';
 import { UsageSection } from './UsageSection';
 import { DeleteDialog } from './DeleteDialog';
 import { ComponentRelationships } from './ComponentRelationships';
@@ -113,7 +113,7 @@ const ComponentDetail = ({ component, onDelete, onRefresh }) => {
       >
         <EmptyStateLayout
           icon={<Puzzle width='10rem' height='10rem' />}
-          content={formatMessage({ id: getTrad('ComponentDetail.emptyState'), defaultMessage: 'Choose a component from the list to view its details and usage' })}
+          content={formatMessage({ id: getTranslation('ComponentDetail.emptyState'), defaultMessage: 'Choose a component from the list to view its details and usage' })}
         />
       </Box>
     );
@@ -143,7 +143,7 @@ const ComponentDetail = ({ component, onDelete, onRefresh }) => {
               startIcon={<Trash />}
               onClick={() => setIsDeleteDialogOpen(true)}
             >
-              {formatMessage({ id: getTrad('ComponentDetail.deleteButton'), defaultMessage: 'Delete Component' })}
+              {formatMessage({ id: getTranslation('ComponentDetail.deleteButton'), defaultMessage: 'Delete Component' })}
             </Button>
           </Flex>
         </Box>

@@ -13,7 +13,7 @@ import {
 } from '@strapi/design-system';
 import { request } from '@strapi/helper-plugin';
 import pluginId from '../../pluginId';
-import getTrad from '../../utils/getTrad';
+import getTranslation from '../../utils/getTranslation';
 
 import { ComponentList, ComponentDetail } from './components';
 
@@ -40,7 +40,7 @@ const HomePage = () => {
       setError(null);
     } catch (err) {
       console.error('Error fetching components:', err);
-      setError(formatMessage({ id: getTrad('HomePage.error'), defaultMessage: 'Failed to load components. Please try again.' }));
+      setError(formatMessage({ id: getTranslation('HomePage.error'), defaultMessage: 'Failed to load components. Please try again.' }));
     } finally {
       setLoading(false);
     }
@@ -58,13 +58,13 @@ const HomePage = () => {
     return (
       <Layout>
         <HeaderLayout
-          title={formatMessage({ id: getTrad('HomePage.title'), defaultMessage: 'Component Usage' })}
-          subtitle={formatMessage({ id: getTrad('plugin.description'), defaultMessage: 'View all components and their usage across content types' })}
+          title={formatMessage({ id: getTranslation('HomePage.title'), defaultMessage: 'Component Usage' })}
+          subtitle={formatMessage({ id: getTranslation('plugin.description'), defaultMessage: 'View all components and their usage across content types' })}
         />
         <ContentLayout>
           <Box padding={8} background='neutral0'>
             <Flex justifyContent='center'>
-              <Loader>{formatMessage({ id: getTrad('HomePage.loading'), defaultMessage: 'Loading components...' })}</Loader>
+              <Loader>{formatMessage({ id: getTranslation('HomePage.loading'), defaultMessage: 'Loading components...' })}</Loader>
             </Flex>
           </Box>
         </ContentLayout>
@@ -75,9 +75,9 @@ const HomePage = () => {
   return (
     <Layout>
       <HeaderLayout
-        title={formatMessage({ id: getTrad('HomePage.title'), defaultMessage: 'Component Usage' })}
+        title={formatMessage({ id: getTranslation('HomePage.title'), defaultMessage: 'Component Usage' })}
         subtitle={formatMessage(
-          { id: getTrad('HomePage.subtitle'), defaultMessage: '{count, plural, =0 {No components} one {# component} other {# components}} • {usages, plural, =0 {no usage} one {# total usage} other {# total usages}}' },
+          { id: getTranslation('HomePage.subtitle'), defaultMessage: '{count, plural, =0 {No components} one {# component} other {# components}} • {usages, plural, =0 {no usage} one {# total usage} other {# total usages}}' },
           { count: components.length, usages: calculateTotalUsages() }
         )}
       />

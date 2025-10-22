@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { useIntl } from 'react-intl';
 import { Box, Typography, Alert } from '@strapi/design-system';
 import { ArrowRight, ArrowLeft, Information } from '@strapi/icons';
-import getTrad from '../../../../utils/getTrad';
+import getTranslation from '../../../../utils/getTranslation';
 import { DependencySection } from '../DependencySection';
 
 /**
@@ -26,15 +26,15 @@ export const ComponentRelationships = ({ relationships }) => {
     const badges = [];
 
     if (use.repeatable) {
-      badges.push({ label: formatMessage({ id: getTrad('ComponentRelationships.badge.repeatable'), defaultMessage: 'Repeatable' }), variant: 'secondary' });
+      badges.push({ label: formatMessage({ id: getTranslation('ComponentRelationships.badge.repeatable'), defaultMessage: 'Repeatable' }), variant: 'secondary' });
     }
     if (use.isDynamicZone) {
-      badges.push({ label: formatMessage({ id: getTrad('ComponentRelationships.badge.dynamicZone'), defaultMessage: 'Dynamic Zone' }), variant: 'primary' });
+      badges.push({ label: formatMessage({ id: getTranslation('ComponentRelationships.badge.dynamicZone'), defaultMessage: 'Dynamic Zone' }), variant: 'primary' });
     }
 
     return {
       title: use.componentUid,
-      subtitle: formatMessage({ id: getTrad('ComponentRelationships.field'), defaultMessage: 'Field: {name}' }, { name: use.attributeName }),
+      subtitle: formatMessage({ id: getTranslation('ComponentRelationships.field'), defaultMessage: 'Field: {name}' }, { name: use.attributeName }),
       badges,
       metadata: []
     };
@@ -46,14 +46,14 @@ export const ComponentRelationships = ({ relationships }) => {
 
     if (parent.attributes && parent.attributes.length > 0) {
       const fieldNames = parent.attributes.map((attr) => attr.name).join(', ');
-      metadata.push(formatMessage({ id: getTrad('ComponentRelationships.fields'), defaultMessage: 'Fields: {names}' }, { names: fieldNames }));
+      metadata.push(formatMessage({ id: getTranslation('ComponentRelationships.fields'), defaultMessage: 'Fields: {names}' }, { names: fieldNames }));
     }
 
     const badges = parent.attributes
       ? parent.attributes.map((attr) => {
           const labels = [];
-          if (attr.repeatable) labels.push(formatMessage({ id: getTrad('ComponentRelationships.badge.repeatable'), defaultMessage: 'Repeatable' }).toLowerCase());
-          if (attr.isDynamicZone) labels.push(formatMessage({ id: getTrad('ComponentRelationships.badge.dynamicZone'), defaultMessage: 'Dynamic Zone' }).toLowerCase());
+          if (attr.repeatable) labels.push(formatMessage({ id: getTranslation('ComponentRelationships.badge.repeatable'), defaultMessage: 'Repeatable' }).toLowerCase());
+          if (attr.isDynamicZone) labels.push(formatMessage({ id: getTranslation('ComponentRelationships.badge.dynamicZone'), defaultMessage: 'Dynamic Zone' }).toLowerCase());
           return labels.length > 0
             ? { label: labels.join(', '), variant: 'secondary' }
             : null;
@@ -74,15 +74,15 @@ export const ComponentRelationships = ({ relationships }) => {
     return (
       <Box padding={6} paddingTop={0}>
         <Typography variant='delta' paddingBottom={4}>
-          {formatMessage({ id: getTrad('ComponentRelationships.title'), defaultMessage: 'Component Dependencies' })}
+          {formatMessage({ id: getTranslation('ComponentRelationships.title'), defaultMessage: 'Component Dependencies' })}
         </Typography>
         <Alert
           variant='default'
-          closeLabel={formatMessage({ id: getTrad('DeleteDialog.closeLabel'), defaultMessage: 'Close' })}
-          title={formatMessage({ id: getTrad('ComponentRelationships.noDependencies.title'), defaultMessage: 'No Dependencies' })}
+          closeLabel={formatMessage({ id: getTranslation('DeleteDialog.closeLabel'), defaultMessage: 'Close' })}
+          title={formatMessage({ id: getTranslation('ComponentRelationships.noDependencies.title'), defaultMessage: 'No Dependencies' })}
           icon={<Information />}
         >
-          {formatMessage({ id: getTrad('ComponentRelationships.noDependencies.message'), defaultMessage: "This component is independent - it doesn't use other components and isn't used by other components." })}
+          {formatMessage({ id: getTranslation('ComponentRelationships.noDependencies.message'), defaultMessage: "This component is independent - it doesn't use other components and isn't used by other components." })}
         </Alert>
       </Box>
     );
@@ -91,7 +91,7 @@ export const ComponentRelationships = ({ relationships }) => {
   return (
     <Box padding={6} paddingTop={0}>
       <Typography variant='delta' paddingBottom={4}>
-        {formatMessage({ id: getTrad('ComponentRelationships.title'), defaultMessage: 'Component Dependencies' })}
+        {formatMessage({ id: getTranslation('ComponentRelationships.title'), defaultMessage: 'Component Dependencies' })}
       </Typography>
 
       <Box
@@ -103,8 +103,8 @@ export const ComponentRelationships = ({ relationships }) => {
         {/* Outgoing Dependencies */}
         {hasUses && (
           <DependencySection
-            title={formatMessage({ id: getTrad('ComponentRelationships.uses.title'), defaultMessage: 'Uses Components' })}
-            description={formatMessage({ id: getTrad('ComponentRelationships.uses.description'), defaultMessage: 'Components nested within this component' })}
+            title={formatMessage({ id: getTranslation('ComponentRelationships.uses.title'), defaultMessage: 'Uses Components' })}
+            description={formatMessage({ id: getTranslation('ComponentRelationships.uses.description'), defaultMessage: 'Components nested within this component' })}
             icon={ArrowRight}
             count={uses.length}
             items={usesItems}
@@ -116,8 +116,8 @@ export const ComponentRelationships = ({ relationships }) => {
         {/* Incoming Dependencies */}
         {hasUsedIn && (
           <DependencySection
-            title={formatMessage({ id: getTrad('ComponentRelationships.usedIn.title'), defaultMessage: 'Used In Components' })}
-            description={formatMessage({ id: getTrad('ComponentRelationships.usedIn.description'), defaultMessage: 'Components that include this component' })}
+            title={formatMessage({ id: getTranslation('ComponentRelationships.usedIn.title'), defaultMessage: 'Used In Components' })}
+            description={formatMessage({ id: getTranslation('ComponentRelationships.usedIn.description'), defaultMessage: 'Components that include this component' })}
             icon={ArrowLeft}
             count={usedIn.length}
             items={usedInItems}
@@ -135,12 +135,12 @@ export const ComponentRelationships = ({ relationships }) => {
             style={{ borderLeft: '3px solid #4945FF' }}
           >
             <Typography variant='omega' fontWeight='semiBold' textColor='neutral700'>
-              {formatMessage({ id: getTrad('ComponentRelationships.summary.title'), defaultMessage: 'Dependency Summary' })}
+              {formatMessage({ id: getTranslation('ComponentRelationships.summary.title'), defaultMessage: 'Dependency Summary' })}
             </Typography>
             <Typography variant='pi' textColor='neutral600' paddingTop={1}>
-              {hasUses && formatMessage({ id: getTrad('ComponentRelationships.summary.uses'), defaultMessage: 'Uses {count, plural, one {# component} other {# components}}' }, { count: uses.length })}
+              {hasUses && formatMessage({ id: getTranslation('ComponentRelationships.summary.uses'), defaultMessage: 'Uses {count, plural, one {# component} other {# components}}' }, { count: uses.length })}
               {hasUses && hasUsedIn && ' • '}
-              {hasUsedIn && formatMessage({ id: getTrad('ComponentRelationships.summary.usedBy'), defaultMessage: 'Used by {count, plural, one {# component} other {# components}}' }, { count: usedIn.length })}
+              {hasUsedIn && formatMessage({ id: getTranslation('ComponentRelationships.summary.usedBy'), defaultMessage: 'Used by {count, plural, one {# component} other {# components}}' }, { count: usedIn.length })}
             </Typography>
           </Box>
         </Box>
