@@ -56,10 +56,12 @@
     "strapi-server.js",
     "README.md",
     "LICENSE",
+    "CHANGELOG.md",
     "package.json"
   ],
   "scripts": {
-    "test": "echo \"No tests specified\" && exit 0"
+    "test": "echo \"No tests specified\" && exit 0",
+    "semantic-release": "semantic-release"
   },
   "dependencies": {},
   "peerDependencies": {
@@ -72,5 +74,9 @@
     "react-intl": "^6.4.1",
     "react-router-dom": "^5.3.4"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
+    "semantic-release": "^23.0.0"
+  }
 }
