@@ -225,57 +225,6 @@ npm link strapi-plugin-component-usage
 npm run build
 ```
 
-### Release Process
-
-This plugin uses [semantic-release](https://github.com/semantic-release/semantic-release) for automated versioning and publishing.
-
-#### Commit Message Format
-
-Follow the [Conventional Commits](https://www.conventionalcommits.org/) specification:
-
-```
-<type>(<scope>): <subject>
-
-<body>
-
-<footer>
-```
-
-**Types:**
-- `feat`: New feature (triggers minor version bump)
-- `fix`: Bug fix (triggers patch version bump)
-- `docs`: Documentation changes (triggers patch version bump)
-- `style`: Code style changes (triggers patch version bump)
-- `refactor`: Code refactoring (triggers patch version bump)
-- `perf`: Performance improvements (triggers patch version bump)
-- `test`: Adding tests
-- `chore`: Maintenance tasks
-
-**Breaking Changes:**
-Add `BREAKING CHANGE:` in the commit footer to trigger a major version bump.
-
-**Examples:**
-```bash
-feat(ui): add component relationship visualization
-fix(api): prevent deletion of components in use
-docs(readme): update installation instructions
-
-feat(api): redesign component tracking system
-
-BREAKING CHANGE: The API endpoint `/components` now returns a different response structure.
-```
-
-#### Automated Releases
-
-Releases are automated via GitHub Actions:
-1. Push commits to `main` branch
-2. GitHub Actions runs semantic-release
-3. Version is bumped based on commit types
-4. CHANGELOG.md is updated
-5. Git tag is created
-6. Package is published to npm
-7. GitHub release is created
-
 ---
 
 ## 🐛 Bug Reports & Feature Requests
