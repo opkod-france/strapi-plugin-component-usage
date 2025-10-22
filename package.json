@@ -1,15 +1,27 @@
 {
   "name": "strapi-plugin-component-usage",
   "version": "1.0.0",
-  "description": "Track and manage Strapi component usage across content types with dependency visualization",
+  "description": "Strapi v4 plugin to track component usage, visualize dependencies, find unused components, and safely clean up content types. Includes dependency graph, usage analytics, and validation.",
   "keywords": [
     "strapi",
     "strapi-plugin",
+    "strapi-v4",
     "component",
     "component-usage",
+    "component-tracker",
+    "component-management",
+    "component-dependencies",
     "dependency-tracking",
+    "dependency-graph",
     "content-management",
-    "admin-ui"
+    "content-type",
+    "admin-ui",
+    "unused-components",
+    "refactoring",
+    "cleanup",
+    "audit",
+    "developer-tools",
+    "strapi-admin"
   ],
   "license": "MIT",
   "author": {
