@@ -1,14 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
+import { useIntl } from 'react-intl';
 import { Box, Typography, Button, Flex, EmptyStateLayout } from '@strapi/design-system';
 import { Trash, Puzzle } from '@strapi/icons';
 import { request, useNotification } from '@strapi/helper-plugin';
 import { pluginId } from '../../../../utils/constants';
+import getTrad from '../../../../utils/getTrad';
 import { UsageSection } from './UsageSection';
 import { DeleteDialog } from './DeleteDialog';
 import { ComponentRelationships } from './ComponentRelationships';
 
 const ComponentDetail = ({ component, onDelete, onRefresh }) => {
+  const { formatMessage } = useIntl();
   const [isDeleteDialogOpen, setIsDeleteDialogOpen] = useState(false);
   const [isDeleting, setIsDeleting] = useState(false);
   const [usage, setUsage] = useState(null);
@@ -110,7 +113,7 @@ const ComponentDetail = ({ component, onDelete, onRefresh }) => {
       >
         <EmptyStateLayout
           icon={<Puzzle width='10rem' height='10rem' />}
-          content='Choose a component from the list to view its details and usage'
+          content={formatMessage({ id: getTrad('ComponentDetail.emptyState'), defaultMessage: 'Choose a component from the list to view its details and usage' })}
         />
       </Box>
     );
@@ -140,7 +143,7 @@ const ComponentDetail = ({ component, onDelete, onRefresh }) => {
               startIcon={<Trash />}
               onClick={() => setIsDeleteDialogOpen(true)}
             >
-              Delete Component
+              {formatMessage({ id: getTrad('ComponentDetail.deleteButton'), defaultMessage: 'Delete Component' })}
             </Button>
           </Flex>
         </Box>

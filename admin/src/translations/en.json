@@ -1,4 +1,50 @@
 {
   "plugin.name": "Component Usage",
-  "plugin.description": "View all components and their usage across content types"
+  "plugin.description": "View all components and their usage across content types",
+
+  "HomePage.title": "Component Usage",
+  "HomePage.subtitle": "{count, plural, =0 {No components} one {# component} other {# components}} • {usages, plural, =0 {no usage} one {# total usage} other {# total usages}}",
+  "HomePage.loading": "Loading components...",
+  "HomePage.error": "Failed to load components. Please try again.",
+
+  "ComponentSearch.placeholder": "Search components...",
+  "ComponentSearch.label": "Search components",
+  "ComponentSearch.clearLabel": "Clear",
+
+  "EmptyResults.message": "No components match your search",
+
+  "ComponentDetail.emptyState": "Choose a component from the list to view its details and usage",
+  "ComponentDetail.deleteButton": "Delete Component",
+
+  "DeleteDialog.title": "Confirm Deletion",
+  "DeleteDialog.message": "Are you sure you want to delete the component <strong>\"{name}\"</strong>?",
+  "DeleteDialog.warning": "Warning: This component is used in {count, plural, one {# place} other {# places}}. Deleting it may break your content types.",
+  "DeleteDialog.irreversible": "This action cannot be undone.",
+  "DeleteDialog.cancel": "Cancel",
+  "DeleteDialog.confirm": "Delete Component",
+  "DeleteDialog.closeLabel": "Close",
+
+  "UsageSection.title": "Usage Details",
+  "UsageSection.refresh": "Refresh",
+  "UsageSection.loading": "Loading usage details...",
+  "UsageSection.emptyState": "This component is not used in any content",
+
+  "UsageTable.contentType": "Content Type",
+  "UsageTable.entryId": "Entry ID",
+  "UsageTable.field": "Field",
+
+  "ComponentRelationships.title": "Component Dependencies",
+  "ComponentRelationships.noDependencies.title": "No Dependencies",
+  "ComponentRelationships.noDependencies.message": "This component is independent - it doesn't use other components and isn't used by other components.",
+  "ComponentRelationships.uses.title": "Uses Components",
+  "ComponentRelationships.uses.description": "Components nested within this component",
+  "ComponentRelationships.usedIn.title": "Used In Components",
+  "ComponentRelationships.usedIn.description": "Components that include this component",
+  "ComponentRelationships.summary.title": "Dependency Summary",
+  "ComponentRelationships.summary.uses": "Uses {count, plural, one {# component} other {# components}}",
+  "ComponentRelationships.summary.usedBy": "Used by {count, plural, one {# component} other {# components}}",
+  "ComponentRelationships.badge.repeatable": "Repeatable",
+  "ComponentRelationships.badge.dynamicZone": "Dynamic Zone",
+  "ComponentRelationships.field": "Field: {name}",
+  "ComponentRelationships.fields": "Fields: {names}"
 }

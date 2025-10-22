@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useIntl } from 'react-intl';
 import {
   Layout,
   HeaderLayout,
@@ -12,10 +13,12 @@ import {
 } from '@strapi/design-system';
 import { request } from '@strapi/helper-plugin';
 import pluginId from '../../pluginId';
+import getTrad from '../../utils/getTrad';
 
 import { ComponentList, ComponentDetail } from './components';
 
 const HomePage = () => {
+  const { formatMessage } = useIntl();
   const [components, setComponents] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -37,7 +40,7 @@ const HomePage = () => {
       setError(null);
     } catch (err) {
       console.error('Error fetching components:', err);
-      setError('Failed to load components. Please try again.');
+      setError(formatMessage({ id: getTrad('HomePage.error'), defaultMessage: 'Failed to load components. Please try again.' }));
     } finally {
       setLoading(false);
     }
@@ -55,13 +58,13 @@ const HomePage = () => {
     return (
       <Layout>
         <HeaderLayout
-          title='Component Usage'
-          subtitle='Manage components and track their usage across content types'
+          title={formatMessage({ id: getTrad('HomePage.title'), defaultMessage: 'Component Usage' })}
+          subtitle={formatMessage({ id: getTrad('plugin.description'), defaultMessage: 'View all components and their usage across content types' })}
         />
         <ContentLayout>
           <Box padding={8} background='neutral0'>
             <Flex justifyContent='center'>
-              <Loader>Loading components...</Loader>
+              <Loader>{formatMessage({ id: getTrad('HomePage.loading'), defaultMessage: 'Loading components...' })}</Loader>
             </Flex>
           </Box>
         </ContentLayout>
@@ -72,10 +75,11 @@ const HomePage = () => {
   return (
     <Layout>
       <HeaderLayout
-        title='Component Usage'
-        subtitle={`${components.length} component${
-          components.length !== 1 ? 's' : ''
-        } • ${calculateTotalUsages()} total usage${calculateTotalUsages() !== 1 ? 's' : ''}`}
+        title={formatMessage({ id: getTrad('HomePage.title'), defaultMessage: 'Component Usage' })}
+        subtitle={formatMessage(
+          { id: getTrad('HomePage.subtitle'), defaultMessage: '{count, plural, =0 {No components} one {# component} other {# components}} • {usages, plural, =0 {no usage} one {# total usage} other {# total usages}}' },
+          { count: components.length, usages: calculateTotalUsages() }
+        )}
       />
       <ContentLayout>
         {error && (

@@ -1,14 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useIntl } from 'react-intl';
 import { Box, Typography, Button, Flex, Loader, EmptyStateLayout } from '@strapi/design-system';
 import { Refresh, Information } from '@strapi/icons';
+import getTrad from '../../../../utils/getTrad';
 import { UsageTable } from './UsageTable';
 
 const UsageSection = ({ component, usage, loadingUsage, onRefresh }) => {
+  const { formatMessage } = useIntl();
+
   return (
     <Box padding={6}>
       <Flex justifyContent='space-between' alignItems='center' paddingBottom={4}>
-        <Typography variant='delta'>Usage Details</Typography>
+        <Typography variant='delta'>
+          {formatMessage({ id: getTrad('UsageSection.title'), defaultMessage: 'Usage Details' })}
+        </Typography>
         {component.usageCount > 0 && (
           <Button
             size='S'
@@ -17,7 +23,7 @@ const UsageSection = ({ component, usage, loadingUsage, onRefresh }) => {
             onClick={onRefresh}
             loading={loadingUsage}
           >
-            Refresh
+            {formatMessage({ id: getTrad('UsageSection.refresh'), defaultMessage: 'Refresh' })}
           </Button>
         )}
       </Flex>
@@ -25,13 +31,15 @@ const UsageSection = ({ component, usage, loadingUsage, onRefresh }) => {
       {loadingUsage ? (
         <Box padding={8}>
           <Flex justifyContent='center'>
-            <Loader small>Loading usage details...</Loader>
+            <Loader small>
+              {formatMessage({ id: getTrad('UsageSection.loading'), defaultMessage: 'Loading usage details...' })}
+            </Loader>
           </Flex>
         </Box>
       ) : component.usageCount === 0 ? (
         <EmptyStateLayout
           icon={<Information width='64px' height='64px' />}
-          content='This component is not used in any content'
+          content={formatMessage({ id: getTrad('UsageSection.emptyState'), defaultMessage: 'This component is not used in any content' })}
         />
       ) : (
         <UsageTable usage={usage} />

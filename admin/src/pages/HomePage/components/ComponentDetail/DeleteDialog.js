@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useIntl } from 'react-intl';
 import {
   Button,
   Dialog,
@@ -10,40 +11,47 @@ import {
   Flex
 } from '@strapi/design-system';
 import { Trash } from '@strapi/icons';
+import getTrad from '../../../../utils/getTrad';
 
 const DeleteDialog = ({ isOpen, onClose, onConfirm, component, isDeleting }) => {
+  const { formatMessage } = useIntl();
+
   if (!component) return null;
 
   return (
-    <Dialog onClose={onClose} title='Confirm Deletion' isOpen={isOpen}>
+    <Dialog onClose={onClose} title={formatMessage({ id: getTrad('DeleteDialog.title'), defaultMessage: 'Confirm Deletion' })} isOpen={isOpen}>
       <DialogBody icon={<Trash />}>
         <Flex direction='column' alignItems='stretch' gap={2}>
           <Typography id='confirm-description'>
-            Are you sure you want to delete the component <strong>"{component.displayName}"</strong>
-            ?
+            {formatMessage(
+              { id: getTrad('DeleteDialog.message'), defaultMessage: 'Are you sure you want to delete the component <strong>"{name}"</strong>?' },
+              { name: component.displayName, strong: (...chunks) => <strong>{chunks}</strong> }
+            )}
           </Typography>
           {component.usageCount > 0 && (
-            <Alert variant='danger' closeLabel='Close'>
+            <Alert variant='danger' closeLabel={formatMessage({ id: getTrad('DeleteDialog.closeLabel'), defaultMessage: 'Close' })}>
               <Typography>
-                Warning: This component is used in {component.usageCount} place
-                {component.usageCount > 1 ? 's' : ''}. Deleting it may break your content types.
+                {formatMessage(
+                  { id: getTrad('DeleteDialog.warning'), defaultMessage: 'Warning: This component is used in {count, plural, one {# place} other {# places}}. Deleting it may break your content types.' },
+                  { count: component.usageCount }
+                )}
               </Typography>
             </Alert>
           )}
           <Typography textColor='neutral600' variant='pi'>
-            This action cannot be undone.
+            {formatMessage({ id: getTrad('DeleteDialog.irreversible'), defaultMessage: 'This action cannot be undone.' })}
           </Typography>
         </Flex>
       </DialogBody>
       <DialogFooter
         startAction={
           <Button onClick={onClose} variant='tertiary'>
-            Cancel
+            {formatMessage({ id: getTrad('DeleteDialog.cancel'), defaultMessage: 'Cancel' })}
           </Button>
         }
         endAction={
           <Button onClick={onConfirm} variant='danger' startIcon={<Trash />} loading={isDeleting}>
-            Delete Component
+            {formatMessage({ id: getTrad('DeleteDialog.confirm'), defaultMessage: 'Delete Component' })}
           </Button>
         }
       />
