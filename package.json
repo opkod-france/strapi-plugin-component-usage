@@ -38,6 +38,9 @@
     "url": "https://github.com/opkod-france/strapi-plugin-component-usage/issues"
   },
   "homepage": "https://github.com/opkod-france/strapi-plugin-component-usage#readme",
+  "strapi-plugin": {
+    "logo": "assets/logo.png"
+  },
   "engines": {
     "node": ">=14.19.1 <=20.x.x",
     "npm": ">=6.0.0"
@@ -52,6 +55,7 @@
   "files": [
     "admin",
     "server",
+    "assets",
     "strapi-admin.js",
     "strapi-server.js",
     "README.md",
