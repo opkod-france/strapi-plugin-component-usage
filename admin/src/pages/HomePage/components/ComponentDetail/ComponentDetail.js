@@ -3,8 +3,7 @@ import PropTypes from 'prop-types';
 import { Box, Typography, Button, Flex, EmptyStateLayout } from '@strapi/design-system';
 import { Trash, Puzzle } from '@strapi/icons';
 import { request, useNotification } from '@strapi/helper-plugin';
-import pluginId from '../../../pluginId';
-
+import { pluginId } from '../../../../utils/constants';
 import { UsageSection } from './UsageSection';
 import { DeleteDialog } from './DeleteDialog';
 import { ComponentRelationships } from './ComponentRelationships';
@@ -156,9 +155,6 @@ const ComponentDetail = ({ component, onDelete, onRefresh }) => {
 
         {/* Component Relationships */}
         {!loadingRelationships && <ComponentRelationships relationships={relationships} />}
-
-        {/* Attributes */}
-        <AttributesList attributes={component.attributes} />
       </Box>
 
       {/* Delete Confirmation Dialog */}

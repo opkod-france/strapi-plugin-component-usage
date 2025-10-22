@@ -6,6 +6,9 @@ import { PluginIcon } from './components/PluginIcon';
 
 const name = pluginPkg.strapi.name;
 
+// Export pluginId for use in components
+export { pluginId };
+
 export default {
   register(app) {
     app.addMenuLink({
