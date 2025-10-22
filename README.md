@@ -211,7 +211,7 @@ admin/src/pages/HomePage/components/
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/strapi-plugin-component-usage.git
+git clone https://github.com/opkod-france/strapi-plugin-component-usage.git
 
 # Install dependencies
 npm install
@@ -231,7 +231,7 @@ npm run build
 
 Found a bug or have a feature request?
 
-1. Check existing [issues](https://github.com/yourusername/strapi-plugin-component-usage/issues)
+1. Check existing [issues](https://github.com/opkod-france/strapi-plugin-component-usage/issues)
 2. Create a new issue with:
    - Clear description
    - Steps to reproduce (for bugs)
@@ -275,13 +275,13 @@ Contributions are welcome! Please see [CONTRIBUTING.md](./CONTRIBUTING.md) for g
 
 [MIT License](LICENSE)
 
-Copyright (c) 2024 Memobank Team
+Copyright (c) 2024 Opkod
 
 ---
 
 ## 👥 Credits
 
-Developed and maintained by [Memobank Team](https://memobank.com)
+Developed and maintained by [Opkod](https://opkod.io)
 
 ---
 
@@ -300,7 +300,7 @@ If you find this plugin helpful, please:
   **Made with ❤️ for the Strapi community**
 
   [npm](https://www.npmjs.com/package/strapi-plugin-component-usage) •
-  [GitHub](https://github.com/yourusername/strapi-plugin-component-usage) •
-  [Issues](https://github.com/yourusername/strapi-plugin-component-usage/issues)
+  [GitHub](https://github.com/opkod-france/strapi-plugin-component-usage) •
+  [Issues](https://github.com/opkod-france/strapi-plugin-component-usage/issues)
 
 </div>

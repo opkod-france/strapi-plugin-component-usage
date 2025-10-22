@@ -116,7 +116,7 @@ docs(readme): update installation instructions
 If you have questions:
 
 1. Check the [README](README.md)
-2. Search [existing issues](https://github.com/yourusername/strapi-plugin-component-usage/issues)
+2. Search [existing issues](https://github.com/opkod-france/strapi-plugin-component-usage/issues)
 3. Open a new issue with the `question` label
 
 ## 📄 License
