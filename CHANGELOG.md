@@ -1,3 +1,15 @@
+# [1.1.0](https://github.com/opkod-france/strapi-plugin-component-usage/compare/v1.0.0...v1.1.0) (2025-10-22)
+
+
+### Bug Fixes
+
+* enable admin panel to load component detail pages ([fcea35f](https://github.com/opkod-france/strapi-plugin-component-usage/commit/fcea35fa8ef9a17a3c49305d97fc10753a2f2e3a))
+
+
+### Features
+
+* add internationalization support for multi-language admin UI ([5032e0e](https://github.com/opkod-france/strapi-plugin-component-usage/commit/5032e0e4dceb5155f0323701b332dd337d172daa))
+
 # 1.0.0 (2025-10-22)
 
 

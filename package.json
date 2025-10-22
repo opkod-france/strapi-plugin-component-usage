@@ -1,6 +1,6 @@
 {
   "name": "strapi-plugin-component-usage",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Strapi v4 plugin to track component usage, visualize dependencies, find unused components, and safely clean up content types. Includes dependency graph, usage analytics, and validation.",
   "keywords": [
     "strapi",
