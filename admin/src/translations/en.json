@@ -17,7 +17,7 @@
   "ComponentDetail.deleteButton": "Delete Component",
 
   "DeleteDialog.title": "Confirm Deletion",
-  "DeleteDialog.message": "Are you sure you want to delete the component <strong>\"{name}\"</strong>?",
+  "DeleteDialog.message": "Are you sure you want to delete the component \"{name}\"?",
   "DeleteDialog.warning": "Warning: This component is used in {count, plural, one {# place} other {# places}}. Deleting it may break your content types.",
   "DeleteDialog.irreversible": "This action cannot be undone.",
   "DeleteDialog.cancel": "Cancel",

@@ -1,11 +1,11 @@
 {
-  "name": "strapi-plugin-component-usage",
-  "version": "1.1.0",
-  "description": "Strapi v4 plugin to track component usage, visualize dependencies, find unused components, and safely clean up content types. Includes dependency graph, usage analytics, and validation.",
+  "name": "@opkod-france/strapi-plugin-component-usage",
+  "version": "2.0.0",
+  "description": "Track and manage Strapi component usage across content types with dependency visualization",
   "keywords": [
     "strapi",
     "strapi-plugin",
-    "strapi-v4",
+    "strapi-v5",
     "component",
     "component-usage",
     "component-tracker",
@@ -14,14 +14,7 @@
     "dependency-tracking",
     "dependency-graph",
     "content-management",
-    "content-type",
-    "admin-ui",
-    "unused-components",
-    "refactoring",
-    "cleanup",
-    "audit",
-    "developer-tools",
-    "strapi-admin"
+    "developer-tools"
   ],
   "license": "MIT",
   "author": {
@@ -36,12 +29,6 @@
       "url": "https://github.com/ayhid"
     }
   ],
-  "contributors": [
-    {
-      "name": "Opkod France",
-      "url": "https://github.com/opkod-france"
-    }
-  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/opkod-france/strapi-plugin-component-usage.git"
@@ -50,49 +37,62 @@
     "url": "https://github.com/opkod-france/strapi-plugin-component-usage/issues"
   },
   "homepage": "https://github.com/opkod-france/strapi-plugin-component-usage#readme",
-  "strapi-plugin": {
-    "logo": "assets/logo.png"
+  "exports": {
+    "./strapi-admin": {
+      "types": "./dist/admin/src/index.d.ts",
+      "source": "./admin/src/index.ts",
+      "import": "./dist/admin/index.mjs",
+      "require": "./dist/admin/index.js",
+      "default": "./dist/admin/index.js"
+    },
+    "./strapi-server": {
+      "types": "./dist/server/src/index.d.ts",
+      "source": "./server/src/index.ts",
+      "import": "./dist/server/index.mjs",
+      "require": "./dist/server/index.js",
+      "default": "./dist/server/index.js"
+    },
+    "./package.json": "./package.json"
   },
-  "engines": {
-    "node": ">=18.0.0 <=22.x.x",
-    "npm": ">=6.0.0"
+  "files": [
+    "dist/",
+    "assets/",
+    "strapi-server.js"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "strapi-plugin build",
+    "watch": "strapi-plugin watch",
+    "verify": "strapi-plugin verify"
+  },
+  "dependencies": {
+    "@strapi/design-system": "^2.0.0",
+    "@strapi/icons": "^2.0.0",
+    "react-intl": "^6.0.0"
+  },
+  "devDependencies": {
+    "@strapi/sdk-plugin": "^5.0.0",
+    "@strapi/strapi": "^5.0.0",
+    "@strapi/typescript-utils": "^5.0.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-router-dom": "^6.0.0",
+    "styled-components": "^6.0.0",
+    "typescript": "^5.0.0"
+  },
+  "peerDependencies": {
+    "@strapi/strapi": "^5.0.0",
+    "react": "^17.0.0 || ^18.0.0",
+    "react-dom": "^17.0.0 || ^18.0.0",
+    "react-router-dom": "^6.0.0",
+    "styled-components": "^6.0.0"
   },
   "strapi": {
-    "displayName": "Component Usage",
     "name": "component-usage",
     "description": "Track component usage and dependencies across your Strapi content types",
     "kind": "plugin",
-    "required": false
-  },
-  "files": [
-    "admin",
-    "server",
-    "assets",
-    "strapi-admin.js",
-    "strapi-server.js",
-    "README.md",
-    "LICENSE",
-    "CHANGELOG.md",
-    "package.json"
-  ],
-  "scripts": {
-    "test": "echo \"No tests specified\" && exit 0",
-    "semantic-release": "semantic-release"
-  },
-  "dependencies": {},
-  "peerDependencies": {
-    "@strapi/design-system": "^1.9.0",
-    "@strapi/helper-plugin": "^4.13.1",
-    "@strapi/icons": "^1.9.0",
-    "@strapi/strapi": "^4.13.1",
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0",
-    "react-intl": "^6.4.1",
-    "react-router-dom": "^5.3.4"
-  },
-  "devDependencies": {
-    "@semantic-release/changelog": "^6.0.3",
-    "@semantic-release/git": "^10.0.1",
-    "semantic-release": "^23.0.0"
+    "displayName": "Component Usage"
   }
 }

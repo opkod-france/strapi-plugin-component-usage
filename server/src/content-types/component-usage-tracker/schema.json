@@ -1,0 +1,49 @@
+{
+  "kind": "collectionType",
+  "collectionName": "component_usage_tracker",
+  "info": {
+    "singularName": "component-usage-tracker",
+    "pluralName": "component-usage-trackers",
+    "displayName": "Component Usage Tracker",
+    "description": "Tracks component usage across content types"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {
+    "content-manager": {
+      "visible": false
+    },
+    "content-type-builder": {
+      "visible": false
+    }
+  },
+  "attributes": {
+    "componentUid": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "componentName": {
+      "type": "string",
+      "required": true
+    },
+    "componentCategory": {
+      "type": "string",
+      "required": true
+    },
+    "usageCount": {
+      "type": "integer",
+      "default": 0,
+      "required": true
+    },
+    "usages": {
+      "type": "json",
+      "required": false,
+      "default": []
+    },
+    "lastUpdated": {
+      "type": "datetime"
+    }
+  }
+}

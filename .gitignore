@@ -1,0 +1,10 @@
+node_modules
+dist
+.yarn/*
+!.yarn/cache
+!.yarn/patches
+!.yarn/releases
+.pnp.*
+yarn-error.log
+.DS_Store
+*.log
