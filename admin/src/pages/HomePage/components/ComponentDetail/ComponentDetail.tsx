@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useIntl } from 'react-intl';
 import { Box, Typography, Button, Flex, EmptyStateLayout } from '@strapi/design-system';
-import { Trash, Puzzle } from '@strapi/icons';
+import { Trash, PuzzlePiece as Puzzle } from '@strapi/icons';
 import { useFetchClient, useNotification } from '@strapi/strapi/admin';
 import { PLUGIN_ID } from '../../../../pluginId';
 import getTranslation from '../../../../utils/getTranslation';

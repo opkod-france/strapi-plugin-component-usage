@@ -1,5 +1,5 @@
 import { PLUGIN_ID } from './pluginId';
-import { Puzzle } from '@strapi/icons';
+import { PuzzlePiece as Puzzle } from '@strapi/icons';
 
 export default {
   register(app: any) {
