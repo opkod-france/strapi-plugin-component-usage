@@ -1,6 +1,6 @@
 {
   "name": "@opkod-france/strapi-plugin-component-usage",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Track and manage Strapi component usage across content types with dependency visualization",
   "keywords": [
     "strapi",
